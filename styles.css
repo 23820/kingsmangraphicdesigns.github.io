@@ -1,0 +1,350 @@
+/* Global styles */
+body {
+    background-color: #90EE90;
+    font-family: 'Poppins', sans-serif;
+    color: #3B170B;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    color: #802000;
+}
+
+p {
+    font-size: 20px;
+}
+.slogan p {
+    font-style: italic; /* Set text to italic */
+}
+
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Navigation styles */
+nav {
+    background-color: #802000;
+    color: #fff;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center; /* Center align the menu items */
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: bold;
+    background-color: #cc3300;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #661a00;
+}
+
+/* Section styles */
+.section {
+    padding: 50px 0;
+}
+
+/* Gallery styles */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+	display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+       
+}
+
+.gallery-item {
+    flex: 0 0 calc(33.33% - 20px);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* CSS for fullscreen mode */
+.gallery img.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    z-index: 9999;
+    border-radius: 0;
+    box-shadow: none;
+}
+
+/* Lightbox styles */
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightbox img {
+    max-width: 80%;
+    max-height: 80%;
+    border-radius: 15px;
+}
+
+/* Form styles */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="email"],
+form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+form button {
+    background-color: #90EE90;
+    color: rgb(165, 42, 42,);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Footer styles */
+footer {
+    background-color: #802000;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+@media only screen and (max-width: 768px) {
+    nav .menu-toggle {
+        display: block; /* Show the menu toggle button on small screens */
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    nav .menu {
+        display: none; /* Hide the menu by default on small screens */
+    }
+
+    nav ul li {
+        display: block; /* Display menu items vertically */
+        margin: 10px 0; /* Add margin between menu items */
+    }
+
+    nav .logo {
+        width: 200px; /* Adjust logo size for smaller screens */
+    }
+
+    nav .menu.active {
+        display: block; /* Show the menu when active */
+    }
+}
+
+/* Media Query for smaller screens */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%; /* Adjust container width for smaller screens */
+    }
+
+    nav ul {
+        display: none; /* Hide the navigation links by default on smaller screens */
+    }
+
+    nav ul.show {
+        display: block; /* Show the navigation links when the menu is toggled */
+    }
+
+    nav ul li {
+        display: block; /* Display menu items vertically */
+        margin: 10px 0; /* Add margin between menu items */
+    }
+
+    nav .logo {
+        width: 200px; /* Adjust logo size for smaller screens */
+    }
+
+    .gallery-item {
+        flex: 0 0 calc(50% - 20px); /* Adjust gallery items for smaller screens */
+    }
+}
+/* Red rounded box covering the entire section */
+.contact-section {
+    position: relative; /* Ensure the container is positioned relatively */
+    border-radius: 15px; /* Rounded corners */
+    padding: 50px; /* Add padding */
+    color: #90EE90; /* Text color set to red */
+
+    /* Ensure the background image covers the entire container */
+    background-image: url('card mockup 4.png');
+    background-size: cover;
+    background-position: center;
+
+    /* Adjust padding as needed */
+    padding: 50px 0;
+}
+
+.contact-section::before {
+    content: ""; /* Create an empty pseudo-element */
+    position: absolute; /* Position it absolutely within the container */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('card mockup 4.png'); /* Set the same background image */
+    opacity: 0.9; /* Opacity value ranges from 0 to 1 */
+    z-index: -1; /* Ensure the pseudo-element is behind the content */
+    border-radius: 15px; /* Rounded corners */
+}
+
+
+/* Align contact icons to left center */
+.contact-info {
+    display: flex;
+    justify-content: top; /* Align icons horizontally to center */
+    align-items: left; /* Align icons vertically to center */
+}
+
+.contact-icon {
+    margin-right: 20px; /* Add space between icons */
+}
+
+.contact-info {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 20px;
+}
+
+.contact-icon {
+    width: 50px; /* Adjust according to your icon size */
+}
+
+.contact-info-text {
+    margin-top: 8px;
+}
+
+#contact-form {
+    margin-top: 100px;
+}
+.contact-info-box {
+    background-color: rgba(165, 42, 42, 0.5); /* Brown with transparency */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-icon {
+    margin-right: 10px;
+}
+
+.contact-info-text p {
+    margin: 0;
+}
+.contact-container {
+    background-color: rgba(165, 42, 42, 0.5); /* Brown with transparency */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.contact-info-box {
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-icon {
+    margin-right: 10px;
+}
+
+.contact-info-text p {
+    margin: 0;
+}
+.contact-container {
+    background-color: rgba(165, 42, 42, 0.5); /* Brown with transparency */
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px; /* Add margin-bottom for spacing */
+}
+
+.contact-info-box {
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.contact-icon {
+    margin-right: 10px;
+}
+
+.contact-info-text p {
+    margin: 0;
+}
+
+.contact-form {
+    padding: 50px; /* Add padding to the form */
+    border-radius: 30px; /* Add border radius to match the box */
+    background-color: rgba(165, 42, 42, 0.9); /* Brown with transparency */
+}
+.contact-section h2 {
+    color: #90EE90; /* Set text color to red */
+}
